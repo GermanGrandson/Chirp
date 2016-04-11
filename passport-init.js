@@ -23,7 +23,7 @@ module.exports = function(passport){
         },
         function(req, username, password, done) {
           //check if user exists
-          if(!user[username]){
+          if(!users[username]){
             return done('User not found', false);
           }
           //check if passord is valid
@@ -32,7 +32,7 @@ module.exports = function(passport){
           }
           //Successful signin
           console.log("Successfully Signed In");
-            return done(null, user[username]);
+            return done(null, users[username]);
         }
     ));
 
